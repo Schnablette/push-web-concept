@@ -7,7 +7,7 @@ type Props = {
   className?: string
 }
 
-export function Logo(props: Props & React.ComponentPropsWithoutRef<'svg'>) {
+export function Logo(props: Props) {
   return (
     <Image
       src={props.variant === 'white' ? PushLogoWhite : PushLogo}

@@ -107,16 +107,17 @@ export function Header() {
               <Logo className="h-10 w-auto" variant="white" />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
+              <NavLink href="#intro" variant='white'>Who we are</NavLink>
               <NavLink href="#features" variant='white'>Features</NavLink>
-              <NavLink href="#testimonials" variant='white'>Testimonials</NavLink>
-              <NavLink href="#pricing" variant='white'>Pricing</NavLink>
+              {/* <NavLink href="#testimonials" variant='white'>Testimonials</NavLink>
+              <NavLink href="#pricing" variant='white'>Pricing</NavLink> */}
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
             {/* <div className="hidden md:block">
               <NavLink href="/login">Sign in</NavLink>
             </div> */}
-            <Button href="/register" color="blue">
+            <Button href="/contact-us" color="blue">
               Contact us
             </Button>
             <div className="-mr-1 md:hidden">

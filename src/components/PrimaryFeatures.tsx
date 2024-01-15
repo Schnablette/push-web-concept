@@ -63,7 +63,7 @@ export function PrimaryFeatures() {
 
   return (
     <section
-      id="features"
+      id="uniqueID"
       aria-label="Features for Push"
       className="relative overflow-hidden bg-lapis-800 pb-28 pt-20 sm:py-32"
     >

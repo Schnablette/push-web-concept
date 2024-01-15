@@ -11,9 +11,9 @@ export function SlimLayout({ children }: { children: React.ReactNode }) {
             {children}
           </main>
         </div>
-        <div className="hidden sm:contents lg:relative lg:block lg:flex-1">
+        <div className="hidden sm:contents lg:relative lg:block lg:flex-1 bg-lapis-800">
           <Image
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover opacity-30"
             src={backgroundImage}
             alt=""
             unoptimized

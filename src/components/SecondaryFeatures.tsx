@@ -13,17 +13,17 @@ import {
 import { Container } from '@/components/Container'
 import screenshotContacts from '@/images/screenshots/contacts.png'
 import screenshotInventory from '@/images/screenshots/inventory.png'
-import screenshotProfitLoss from '@/images/screenshots/profit-loss.png'
-
 
 import pushProduct from '@/images/push-product.png'
+import pushApp from '@/images/push_app.png'
+import groupPhoto from '@/images/group-photo.png'
 
 interface Feature {
   name: React.ReactNode
   summary: string
   description: string
   image: ImageProps['src']
-  icon: React.ComponentType
+  icon: React.ComponentType & { className?: string }
 }
 
 const features: Array<Feature> = [
@@ -37,20 +37,18 @@ const features: Array<Feature> = [
   },
   {
     name: 'The App',
-    summary:
-      'Now the power of Push™ can be leveraged on any mobile device.',
+    summary: 'Now the power of Push™ can be leveraged on any mobile device.',
     description:
       'Coming in 2024, Push™ will be releasing its Push™ App, which will leverage Bluetooth technology to give even more autonomy and provide the power to open doors with voice activation for more ease of mobility.',
-    image: screenshotInventory,
+    image: pushApp,
     icon: DevicePhoneMobileIcon,
   },
   {
     name: 'The Community',
-    summary:
-      'Push™ users are a part of a growing community.',
+    summary: 'Push™ users are a part of a growing community that\'s here to stay.',
     description:
       'With inclusion and accessibility as its foundation, Push™ encourages individuals to support eachother. Support your community by requesting a Push™ Accessible Door for a building you wish was more accessible.',
-    image: screenshotContacts,
+    image: groupPhoto,
     icon: UsersIcon,
   },
 ]
@@ -71,11 +69,11 @@ function Feature({
     >
       <div
         className={clsx(
-          'w-9 rounded-lg flex justify-center items-center py-1',
+          'flex h-12 w-12 items-center justify-center rounded-lg p-2 text-white',
           isActive ? 'bg-lapis-500' : 'bg-slate-500',
         )}
       >
-        <feature.icon className="h-7 w-7 text-white" />
+        <feature.icon />
       </div>
       <h3
         className={clsx(
@@ -101,7 +99,7 @@ function FeaturesMobile() {
           <Feature feature={feature} className="mx-auto max-w-2xl" isActive />
           <div className="relative mt-10 pb-10">
             <div className="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6" />
-            <div className="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+            <div className="relative mx-auto w-[30rem] overflow-hidden rounded-xl bg-gradient-to-tr from-lapis-900 to-tigereye-500">
               <Image
                 className="w-full"
                 src={feature.image}
@@ -139,7 +137,7 @@ function FeaturesDesktop() {
               />
             ))}
           </Tab.List>
-          <Tab.Panels className="relative mt-20 overflow-hidden rounded-4xl  px-14 py-16 xl:px-16">
+          <Tab.Panels className="relative mt-20 overflow-hidden rounded-4xl px-14 py-16 xl:px-16 bg-lapis-900">
             <div className="-mx-5 flex">
               {features.map((feature, featureIndex) => (
                 <Tab.Panel
@@ -152,7 +150,7 @@ function FeaturesDesktop() {
                   style={{ transform: `translateX(-${selectedIndex * 100}%)` }}
                   aria-hidden={featureIndex !== selectedIndex}
                 >
-                  <div className="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+                  <div className="w-[52.75rem] overflow-hidden rounded-xl bg-gradient-to-t from-lapis-900 to-tigereye-500">
                     <Image
                       className="w-full"
                       src={feature.image}
@@ -174,18 +172,19 @@ function FeaturesDesktop() {
 export function SecondaryFeatures() {
   return (
     <section
-      id="secondary-features"
+      id="features"
       aria-label="Features for simplifying everyday business tasks"
       className="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32"
     >
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Simplify everyday business tasks.
+            Explore Push™
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Because you’d probably be a little confused if we suggested you
-            complicate your everyday business tasks instead.
+            We Hear You aims to address a problem many individuals face when
+            moving through the world with mobility exceptionalities or
+            germ-cognizant individuals.
           </p>
         </div>
         <FeaturesMobile />
