@@ -25,8 +25,6 @@ export function Hero() {
         className="absolute left-1/2 top-1/2 max-w-none translate-x-[-44%] translate-y-[-42%] opacity-30"
         src={backgroundImage}
         alt=""
-        width={2245}
-        height={1636}
         unoptimized
       />
       <Container className="relative pb-16 pt-20 text-center lg:pt-32">

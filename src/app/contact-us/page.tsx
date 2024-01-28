@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Sign In',
 }
 
-export async function getData() {
+async function getData() {
   return {
     KEY: process.env.EMAIL_API_KEY,
   }
