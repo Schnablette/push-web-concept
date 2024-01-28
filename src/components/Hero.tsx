@@ -5,12 +5,14 @@ import { Container } from '@/components/Container'
 
 import backgroundImage from '@/images/background-features.jpg'
 
-import logoLaravel from '@/images/logos/laravel.svg'
-import logoMirage from '@/images/logos/mirage.svg'
-import logoStatamic from '@/images/logos/statamic.svg'
-import logoStaticKit from '@/images/logos/statickit.svg'
-import logoTransistor from '@/images/logos/transistor.svg'
-import logoTuple from '@/images/logos/tuple.svg'
+import logoAdvocates from '@/images/logos/Advocates-for-Access.png'
+import logoArch from '@/images/logos/arch-grants.png'
+import logoBradley from '@/images/logos/Blogo_white_Center.svg'
+import logoBraunability from '@/images/logos/braunability-logo.svg'
+import logoEpic from '@/images/logos/epic-logo.png'
+import logoHibt from '@/images/logos/hibt.png'
+import logoICC from '@/images/logos/ICC-logo-white-large.svg'
+import logoKnox from '@/images/logos/knox.png'
 
 export function Hero() {
   return (
@@ -71,23 +73,27 @@ export function Hero() {
           >
             {[
               [
-                { name: 'Transistor', logo: logoTransistor },
-                { name: 'Tuple', logo: logoTuple },
-                { name: 'StaticKit', logo: logoStaticKit },
+                { name: 'Advocates for Access', logo: logoAdvocates },
+                { name: 'Arch Grants', logo: logoArch },
+                { name: 'Bradley University', logo: logoBradley },
               ],
               [
-                { name: 'Mirage', logo: logoMirage },
-                { name: 'Laravel', logo: logoLaravel },
-                { name: 'Statamic', logo: logoStatamic },
+                { name: 'Braunability', logo: logoBraunability },
+                { name: 'Epic', logo: logoEpic },
+                { name: 'How I Built This', logo: logoHibt },
+              ],
+              [
+                { name: 'Illinois Community College', logo: logoICC },
+                { name: 'Knox University', logo: logoKnox },
               ],
             ].map((group, groupIndex) => (
               <li key={groupIndex}>
                 <ul
                   role="list"
-                  className="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0"
+                  className="flex flex-col flex-wrap justify-center items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0"
                 >
                   {group.map((company) => (
-                    <li key={company.name} className="flex">
+                    <li key={company.name} className="flex max-w-[200px] my-6">
                       <Image
                         src={company.logo}
                         alt={company.name}

@@ -28,14 +28,6 @@ interface Feature {
 
 const features: Array<Feature> = [
   {
-    name: 'The Wearable',
-    summary: 'Can be worn on the wrist or attached to a mobility device.',
-    description:
-      'The Push™ device enables the wearer to open any Push-accessible door with the push of a button. Its designed to be sleek but inconspicuous. The device is compatible with most smart watch bands.',
-    image: pushProduct,
-    icon: CpuChipIcon,
-  },
-  {
     name: 'The App',
     summary: 'Now the power of Push™ can be leveraged on any mobile device.',
     description:
@@ -44,8 +36,17 @@ const features: Array<Feature> = [
     icon: DevicePhoneMobileIcon,
   },
   {
+    name: 'The Wearable',
+    summary: 'Can be worn on the wrist or attached to a mobility device.',
+    description:
+      'The Push™ device enables the wearer to open any Push-accessible door with the push of a button. Its designed to be sleek but inconspicuous. The device is compatible with most smart watch bands.',
+    image: pushProduct,
+    icon: CpuChipIcon,
+  },
+  {
     name: 'The Community',
-    summary: 'Push™ users are a part of a growing community that\'s here to stay.',
+    summary:
+      "Push™ users are a part of a growing community that's here to stay.",
     description:
       'With inclusion and accessibility as its foundation, Push™ encourages individuals to support eachother. Support your community by requesting a Push™ Accessible Door for a building you wish was more accessible.',
     image: groupPhoto,
@@ -99,7 +100,7 @@ function FeaturesMobile() {
           <Feature feature={feature} className="mx-auto max-w-2xl" isActive />
           <div className="relative mt-10 pb-10">
             <div className="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6" />
-            <div className="relative mx-auto w-[30rem] overflow-hidden rounded-xl bg-gradient-to-tr from-lapis-900 to-tigereye-500">
+            <div className="relative mx-auto w-[20rem] overflow-hidden rounded-xl bg-gradient-to-tr from-lapis-900 to-tigereye-500">
               <Image
                 className="w-full"
                 src={feature.image}
@@ -137,7 +138,7 @@ function FeaturesDesktop() {
               />
             ))}
           </Tab.List>
-          <Tab.Panels className="relative mt-20 overflow-hidden rounded-4xl px-14 py-16 xl:px-16 bg-lapis-900">
+          <Tab.Panels className="relative mt-20 overflow-hidden rounded-4xl bg-lapis-900 px-14 py-16 xl:px-16">
             <div className="-mx-5 flex">
               {features.map((feature, featureIndex) => (
                 <Tab.Panel

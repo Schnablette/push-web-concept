@@ -1,16 +1,26 @@
+import { type Metadata, GetStaticProps } from 'next'
 import Link from 'next/link'
 
 import { Button } from '@/components/Button'
 import { TextField } from '@/components/Fields'
 import { Logo } from '@/components/Logo'
 import { SlimLayout } from '@/components/SlimLayout'
-import { type Metadata } from 'next'
+
+// import accessKey from '@/.env'
 
 export const metadata: Metadata = {
   title: 'Sign In',
 }
 
-export default function Login() {
+export async function getData() {
+  return {
+    KEY: process.env.EMAIL_API_KEY,
+  }
+}
+
+export default async function Login() {
+  const data = await getData()
+
   return (
     <SlimLayout>
       <div className="flex">
@@ -31,21 +41,17 @@ export default function Login() {
         for a free trial. */}
       </p>
       <form
-        action="#"
+        action="https://api.web3forms.com/submit"
         className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2"
+        method="POST"
       >
+        <input type="hidden" name="access_key" value={data.KEY} />
         <TextField
-          label="First Name"
-          name="first name"
+          className="col-span-full"
+          label="Name"
+          name="name"
           type="text"
           autoComplete="given-name"
-          required
-        />
-        <TextField
-          label="Last Name"
-          name="last name"
-          type="text"
-          autoComplete="family-name"
           required
         />
         <TextField
@@ -58,11 +64,16 @@ export default function Login() {
         />
         <TextField
           label="How can we help?"
-          name="intro"
-          type="text"
+          name="message"
+          type="textarea"
           className="col-span-full"
         />
         <div>
+          <input
+            type="hidden"
+            name="redirect"
+            value="https://web3forms.com/success"
+          />
           <Button type="submit" variant="solid" color="blue" className="w-full">
             Send contact request
           </Button>
