@@ -174,7 +174,7 @@ export function SecondaryFeatures() {
   return (
     <section
       id="features"
-      aria-label="Features for simplifying everyday business tasks"
+      aria-label="Push Features"
       className="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32"
     >
       <Container>
@@ -183,7 +183,7 @@ export function SecondaryFeatures() {
             Explore Push™
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            We Hear You aims to address a problem many individuals face when
+            Push™ aims to address a problem many individuals face when
             moving through the world with mobility exceptionalities or
             germ-cognizant individuals.
           </p>
