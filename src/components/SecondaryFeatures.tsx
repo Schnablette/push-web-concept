@@ -74,7 +74,7 @@ function Feature({
           isActive ? 'bg-lapis-500' : 'bg-slate-500',
         )}
       >
-        <feature.icon />
+        <feature.icon h-5 w-5 />
       </div>
       <h3
         className={clsx(
